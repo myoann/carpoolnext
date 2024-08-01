@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { validateCoordinates } from "@/utils";
 
-import "./searchForm.css";
+import "./SearchForm.css";
 
 const todayDate = new Date().toISOString().substring(0, 10);
 

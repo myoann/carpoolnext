@@ -1,7 +1,8 @@
 import { ParsedTrip } from "@/types";
-import "./Trip.css";
 
 import { convertSeconds, currencySymbol } from "@/utils";
+
+import "./Trip.css";
 
 type Props = {
   trip: ParsedTrip;
