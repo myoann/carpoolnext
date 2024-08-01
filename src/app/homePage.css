@@ -9,10 +9,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 15px;
 }
 
 .main::before {
+  z-index: 1; /* Ensure the overlay is above the background but below the content */
   content: "";
   position: absolute;
   top: 0;
@@ -20,7 +21,16 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
-  z-index: 1; /* Ensure the overlay is above the background but below the content */
+}
+
+.coordinatesExamples {
+  z-index: 2; /* Ensure the examples are above the overlay */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
 }
 
 .searchIcon {
@@ -28,9 +38,10 @@
 }
 
 .existingSearch {
+  z-index: 2; /* Ensure the existing search is above the overlay */
+  margin-top: 20px;
   font-size: 28px;
   color: #fff;
-  z-index: 2; /* Ensure the existing search is above the overlay */
 }
 
 .existingSearchLink {

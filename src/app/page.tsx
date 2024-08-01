@@ -8,6 +8,13 @@ const todayDate = new Date().toISOString().substring(0, 10);
 const Home = () => {
   return (
     <main className="main">
+      <div className="coordinatesExamples">
+        <span>A few examples of coordinates you can use</span>
+        <span>Paris, France: 48.866667,2.333333</span>
+        <span>Toulouse, France: 43.604652,1.444209</span>
+        <span>Nice, France: 43.710172,7.261953</span>
+      </div>
+
       <SearchForm />
 
       <div className="existingSearch">
