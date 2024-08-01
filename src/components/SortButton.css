@@ -1,0 +1,19 @@
+.sortButton {
+  border: none;
+  font-size: 20px;
+  color: #00aff5;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.sortButton:hover {
+  color: #008ec2;
+}
+
+.sortButtonSelected {
+  font-weight: bold;
+}
+
+.sortButtonSelected:hover {
+  color: #008ec2;
+}

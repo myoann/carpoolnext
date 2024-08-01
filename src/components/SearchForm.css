@@ -1,0 +1,69 @@
+.form {
+  z-index: 2; /* Ensure the form is above the overlay */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 50%;
+  padding: 10px 10px 10px 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 9999px;
+}
+
+.form label {
+  width: 100%;
+  font-weight: bold;
+  color: #333;
+}
+
+.form input {
+  display: block;
+  width: 90%;
+  padding-top: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+.form input:focus {
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  outline: none;
+}
+
+.form input[type="date"]::-webkit-inner-spin-button,
+.form input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.error {
+  font-size: 10px;
+  font-weight: 400;
+  color: red;
+}
+
+.submitButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #00aff5;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.submitButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #008ec2;
+}
+
+.searchIcon {
+  filter: invert(100%);
+}

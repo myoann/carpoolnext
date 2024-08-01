@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 128px;
+  border-bottom: 2px solid #aaaaaa;
+}
+
+.header a {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-decoration: none;
+}
+
+.logoTitle {
+  font-size: 40px;
+  font-weight: 900;
+  color: #008ec2;
+  font-style: italic;
+  text-transform: uppercase;
+}

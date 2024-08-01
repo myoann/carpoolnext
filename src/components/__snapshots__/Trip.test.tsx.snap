@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trip matches the snapshot 1`] = `
+<div>
+  <li
+    class="trip"
+  >
+    <a
+      class="tripLink"
+      href="link1"
+      target="_blank"
+    >
+      <span
+        class="vehicle"
+      >
+        No vehicle information
+      </span>
+      <div
+        class="timesAndPrice"
+      >
+        <div
+          class="timesAndDuration"
+        >
+          <span
+            class="time"
+          >
+            10:00
+          </span>
+          <div
+            class="durationContainer"
+          >
+            <div
+              class="durationLine"
+            />
+            <div
+              class="duration"
+            >
+              0h16
+            </div>
+            <div
+              class="durationLine"
+            />
+          </div>
+          <span
+            class="time"
+          >
+            14:00
+          </span>
+        </div>
+        <span
+          class="price"
+        >
+          10
+           
+          €
+        </span>
+      </div>
+      <div
+        class="addresses"
+      >
+        <span>
+          Paris
+          , 
+          FR
+        </span>
+        <span>
+          London
+          , 
+          FR
+        </span>
+      </div>
+      <span
+        class="transfers"
+      >
+        Direct
+      </span>
+    </a>
+  </li>
+</div>
+`;

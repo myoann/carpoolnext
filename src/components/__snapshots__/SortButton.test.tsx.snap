@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortButton matches the snapshot 1`] = `
+<div>
+  <button
+    class="sortButton false"
+  >
+    Departure
+     
+    ↑
+  </button>
+</div>
+`;

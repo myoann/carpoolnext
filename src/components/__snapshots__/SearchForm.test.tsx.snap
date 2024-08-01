@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm matches the snapshot 1`] = `
+<div>
+  <form
+    aria-label="Search for a carpool"
+    class="form"
+  >
+    <label>
+      From coordinate
+      <input
+        name="fromCoordinate"
+        placeholder="Format: latitude,longitude"
+        required=""
+        type="text"
+        value=""
+      />
+    </label>
+    <label>
+      To coordinate
+      <input
+        name="toCoordinate"
+        placeholder="Format: latitude,longitude"
+        required=""
+        type="text"
+        value=""
+      />
+    </label>
+    <label>
+      Date
+      <input
+        name="date"
+        required=""
+        type="date"
+        value="2024-08-01"
+      />
+    </label>
+    <button
+      class="submitButton"
+      type="submit"
+    >
+      <img
+        alt="Search"
+        class="searchIcon"
+        data-nimg="1"
+        decoding="async"
+        height="24"
+        loading="lazy"
+        src="/search.svg"
+        style="color: transparent;"
+        width="24"
+      />
+    </button>
+  </form>
+</div>
+`;

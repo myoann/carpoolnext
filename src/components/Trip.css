@@ -1,0 +1,108 @@
+.trip {
+  background-color: #fff;
+  border-radius: 16px;
+  border: 2px solid #9da1a3;
+  transition:
+    border-color 0.5s,
+    background-color 0.5s;
+}
+
+.trip:hover {
+  border-color: #00aff5;
+  background-color: #e2f8ff;
+}
+
+.trip .time,
+.trip .addresses {
+  transition: 0.5s;
+}
+
+.trip:hover .time,
+.trip:hover .addresses {
+  color: #00aff5;
+}
+
+.tripLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  padding: 16px 24px;
+  text-decoration: none;
+}
+
+.cheapest {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #00b894;
+}
+
+.vehicle {
+  font-size: 12px;
+  color: #b2bec3;
+  text-transform: capitalize;
+}
+
+.timesAndPrice {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timesAndDuration {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.time {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2d3436;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2d3436;
+}
+
+.durationContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.durationLine {
+  flex: 1;
+  width: 20px;
+  border-bottom: 2px solid #a1a9c3;
+  margin: 0 10px;
+}
+
+.duration {
+  color: #a1a9c3;
+  font-size: 14px;
+}
+
+.addresses {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  color: #425486;
+  font-size: 14px;
+}
+
+.addresses > span:last-child,
+.timesAndDuration > span:last-child {
+  width: 25%;
+}
+
+.transfers {
+  width: fit-content;
+  padding: 3px 12px;
+  border-radius: 50px;
+  background-color: rgb(205, 226, 245);
+  color: rgb(19, 41, 104);
+}
