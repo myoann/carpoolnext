@@ -25,14 +25,12 @@ const Search = async ({ searchParams }: Props) => {
   const rawDate = searchParams.db;
 
   let trips: RawTrip[] = [];
-  let dataOk = false;
   try {
     const response = await fetch(
       `https://public-api.blablacar.com/api/v3/trips?key=${process.env.BLABLACAR_API_KEY}&from_coordinate=${rawFromCoordinate}&to_coordinate=${rawToCoordinate}&locale=fr-FR&currency=EUR&start_date_local=${rawDate}T00:00:00&count=3`,
     );
 
     const data = await response.json();
-    dataOk = data;
     trips = data.trips;
   } catch (error) {
     console.error("Error while fetching trips", error);

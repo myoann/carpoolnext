@@ -24,7 +24,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
 
         <Script
           strategy="beforeInteractive"
-          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.MAPS_API_KEY || "AIzaSyBheqU19NlGAxM4YuNRkyPvS-4r8qFf8As"}&libraries=places&callback=Function.prototype`}
+          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.MAPS_API_KEY}&libraries=places&callback=Function.prototype`}
         />
       </body>
     </html>

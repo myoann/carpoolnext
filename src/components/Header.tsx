@@ -10,7 +10,6 @@ const Header = () => (
     </Link>
 
     <Image src="/logo.png" alt="Yoann Moise Logo" width={50} height={50} />
-
   </header>
 );
 
