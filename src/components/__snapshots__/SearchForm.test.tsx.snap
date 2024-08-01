@@ -8,23 +8,27 @@ exports[`SearchForm matches the snapshot 1`] = `
   >
     <label>
       From coordinate
-      <input
-        name="fromCoordinate"
-        placeholder="Format: latitude,longitude"
-        required=""
-        type="text"
-        value=""
-      />
+      <div
+        class="placesAutocomplete"
+      >
+        <input
+          placeholder="Enter a departure place"
+          value=""
+        />
+        <ul />
+      </div>
     </label>
     <label>
       To coordinate
-      <input
-        name="toCoordinate"
-        placeholder="Format: latitude,longitude"
-        required=""
-        type="text"
-        value=""
-      />
+      <div
+        class="placesAutocomplete"
+      >
+        <input
+          placeholder="Enter a destination place"
+          value=""
+        />
+        <ul />
+      </div>
     </label>
     <label>
       Date

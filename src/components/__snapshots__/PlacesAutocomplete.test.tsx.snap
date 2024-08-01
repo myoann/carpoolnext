@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlacesAutocomplete matches the snapshot 1`] = `
+<div>
+  <div
+    class="placesAutocomplete"
+  >
+    <input
+      placeholder="Search for a place"
+      value=""
+    />
+    <ul />
+  </div>
+</div>
+`;

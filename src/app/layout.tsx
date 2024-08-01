@@ -1,10 +1,12 @@
+import { ReactNode } from "react";
 import type { Metadata } from "next";
+import Script from "next/script";
 
 import "./globals.css";
 import Header from "@/components/Header";
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export const metadata: Metadata = {
@@ -15,13 +17,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<Props>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
       <body>
         <Header />
 
         {children}
+
+        <Script
+          strategy="beforeInteractive"
+          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.MAPS_API_KEY || "AIzaSyBheqU19NlGAxM4YuNRkyPvS-4r8qFf8As"}&libraries=places&callback=Function.prototype`}
+        />
       </body>
     </html>
   );

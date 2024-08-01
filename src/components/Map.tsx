@@ -9,18 +9,14 @@ import {
   useMap,
   Polyline,
   CircleMarker,
-  Popup,
 } from "react-leaflet";
 import { LatLngExpression, LatLngBounds } from "leaflet";
+
+import { LatLng } from "@/types";
 
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet-defaulticon-compatibility";
-
-type LatLng = {
-  lat: number;
-  lng: number;
-};
 
 type DepartureAndArrivalProps = {
   geoDeparture: LatLng;

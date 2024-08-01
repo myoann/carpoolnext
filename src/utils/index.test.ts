@@ -1,4 +1,4 @@
-import { convertSeconds, currencySymbol, validateCoordinates } from "./";
+import { convertSeconds, currencySymbol } from "./";
 
 describe("utils", () => {
   describe("convertSeconds", () => {
@@ -18,15 +18,6 @@ describe("utils", () => {
       expect(currencySymbol("GBP")).toBe("£");
       expect(currencySymbol("USD")).toBe("$");
       expect(currencySymbol("JPY")).toBe("JPY");
-    });
-  });
-
-  describe("validateCoordinates", () => {
-    it("validates the coordinates", () => {
-      expect(validateCoordinates("48.864716,2.349014")).toBe(true);
-      expect(validateCoordinates("51.509865,-0.118092")).toBe(true);
-      expect(validateCoordinates("100,100")).toBe(false);
-      expect(validateCoordinates("200,200")).toBe(false);
     });
   });
 });

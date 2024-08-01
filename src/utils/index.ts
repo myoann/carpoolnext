@@ -19,19 +19,3 @@ export const currencySymbol = (currency: string) => {
       return currency;
   }
 };
-
-// Regex for latitude and longitude, used to validate coordinates
-const regexLatitude = /^(-?[1-8]?\d(?:\.\d{1,18})?|90(?:\.0{1,18})?)$/;
-const regexLongitude =
-  /^(-?(?:1[0-7]|[1-9])?\d(?:\.\d{1,18})?|180(?:\.0{1,18})?)$/;
-
-/* Validate a coordinate (latitude, longitude) */
-export const validateCoordinates = (coordinate: string): boolean => {
-  const latitude = coordinate?.split(",")[0];
-  const longitude = coordinate?.split(",")[1];
-
-  let validLatitude = regexLatitude.test(latitude);
-  let validLongitude = regexLongitude.test(longitude);
-
-  return validLatitude && validLongitude;
-};

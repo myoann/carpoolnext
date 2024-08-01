@@ -12,3 +12,13 @@ jest.mock("next/dynamic", () => ({
     return RequiredComponent;
   },
 }));
+
+jest.mock("use-places-autocomplete", () => {
+  return () => ({
+    ready: true,
+    value: "",
+    suggestions: { status: "OK", data: [] },
+    setValue: jest.fn(),
+    clearSuggestions: jest.fn(),
+  });
+});

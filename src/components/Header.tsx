@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import Image from "next/image";
+import Link from "next/link";
 
 import "./Header.css";
 
@@ -9,6 +8,9 @@ const Header = () => (
     <Link href="/">
       <span className="logoTitle">Carpool</span>
     </Link>
+
+    <Image src="/logo.png" alt="Yoann Moise Logo" width={50} height={50} />
+
   </header>
 );
 

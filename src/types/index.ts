@@ -3,6 +3,11 @@ export enum Direction {
   Desc = "desc",
 }
 
+export type LatLng = {
+  lat: number;
+  lng: number;
+};
+
 export type RawTrip = {
   distance_in_meters: number;
   duration_in_seconds: number;

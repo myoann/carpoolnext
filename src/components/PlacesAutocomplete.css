@@ -1,0 +1,37 @@
+.placesAutocomplete {
+  position: relative;
+}
+
+.placesAutocomplete ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
+  z-index: 5;
+}
+
+.placesAutocomplete li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.placesAutocomplete li:hover {
+  background-color: #f0f0f0;
+}
+
+.placesAutocomplete li strong {
+  font-weight: bold;
+}
+
+.placesAutocomplete li small {
+  color: #888;
+}

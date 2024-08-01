@@ -15,27 +15,20 @@ describe("SearchForm", () => {
     expect(container.querySelector("form")).toBeInTheDocument();
   });
 
-  it("renders an input for the from coordinate", () => {
+  it("renders two inputs for the from and to coordinates", () => {
     const { container } = render(<SearchForm />);
 
-    expect(
-      container.querySelector('input[name="fromCoordinate"]')
-    ).toBeInTheDocument();
-  });
-
-  it("renders an input for the to coordinate", () => {
-    const { container } = render(<SearchForm />);
-
-    expect(
-      container.querySelector('input[name="toCoordinate"]')
-    ).toBeInTheDocument();
+    const placesAutocompleteInputs = container.querySelectorAll(
+      ".placesAutocomplete input",
+    );
+    expect(placesAutocompleteInputs).toHaveLength(2);
   });
 
   it("renders an input for the date inside the div with the classname react-datepicker__input-container", () => {
     const { container } = render(<SearchForm />);
 
     expect(
-      container.querySelector(".react-datepicker__input-container input")
+      container.querySelector(".react-datepicker__input-container input"),
     ).toBeInTheDocument();
   });
 

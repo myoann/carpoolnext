@@ -1,5 +1,5 @@
 .form {
-  z-index: 2; /* Ensure the form is above the overlay */
+  z-index: 3; /* Ensure the form is above the overlay */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,13 +16,14 @@
   color: #333;
 }
 
-.form > label > input, .form .react-datepicker-wrapper {
+.form > label > div:first-child {
   display: block;
   width: 90%;
   padding-top: 10px;
 }
 
-.form > label > input, .react-datepicker-wrapper input {
+.form input {
+  width: 100%;
   border: none;
   background-color: transparent;
 }
@@ -32,8 +33,6 @@
 }
 
 .form input:focus {
-  border-bottom: 1px solid black;
-  border-radius: 0;
   outline: none;
 }
 

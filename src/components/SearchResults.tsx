@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 
-import { Direction, SortType, ParsedTrip } from "@/types";
+import { Direction, SortType, ParsedTrip, LatLng } from "@/types";
 
 import Trip from "./Trip";
 import SortButton from "./SortButton";
@@ -11,8 +11,8 @@ import SortButton from "./SortButton";
 import "./SearchResults.css";
 
 type Props = {
-  fromCoordinate: { lat: number; lng: number };
-  toCoordinate: { lat: number; lng: number };
+  fromCoordinate: LatLng;
+  toCoordinate: LatLng;
   trips: ParsedTrip[];
 };
 
@@ -70,28 +70,30 @@ export const SearchResults = ({
 
   return (
     <div className="searchResults">
-      <div className="sortButtons">
-        <SortButton
-          type={SortType.Departure}
-          direction={sort.direction}
-          onClick={handleSortChange}
-          isActive={sort.type === SortType.Departure}
-        />
+      {trips.length > 1 && (
+        <div className="sortButtons">
+          <SortButton
+            type={SortType.Departure}
+            direction={sort.direction}
+            onClick={handleSortChange}
+            isActive={sort.type === SortType.Departure}
+          />
 
-        <SortButton
-          type={SortType.Price}
-          direction={sort.direction}
-          onClick={handleSortChange}
-          isActive={sort.type === SortType.Price}
-        />
+          <SortButton
+            type={SortType.Price}
+            direction={sort.direction}
+            onClick={handleSortChange}
+            isActive={sort.type === SortType.Price}
+          />
 
-        <SortButton
-          type={SortType.Fastest}
-          direction={sort.direction}
-          onClick={handleSortChange}
-          isActive={sort.type === SortType.Fastest}
-        />
-      </div>
+          <SortButton
+            type={SortType.Fastest}
+            direction={sort.direction}
+            onClick={handleSortChange}
+            isActive={sort.type === SortType.Fastest}
+          />
+        </div>
+      )}
 
       <div className="resultsAndMap">
         <ul className="results">

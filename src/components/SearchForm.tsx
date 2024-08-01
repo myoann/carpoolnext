@@ -5,7 +5,9 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import DatePicker from "react-datepicker";
 
-import { validateCoordinates } from "@/utils";
+import { LatLng } from "@/types";
+
+import PlacesAutocomplete from "./PlacesAutocomplete";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "./SearchForm.css";
@@ -13,14 +15,14 @@ import "./SearchForm.css";
 const todayDate = new Date().toISOString().substring(0, 10);
 
 type FormErrors = {
-  date?: string | null;
+  date?: string;
   fromCoordinate?: string;
   toCoordinate?: string;
 };
 
 type ValidateSearchForm = {
-  fromCoordinate: FormDataEntryValue | null;
-  toCoordinate: FormDataEntryValue | null;
+  fromCoordinate: LatLng | null;
+  toCoordinate: LatLng | null;
   date: string | null;
 };
 
@@ -32,16 +34,12 @@ const validateSearchForm = ({
 }: ValidateSearchForm): FormErrors => {
   const errors: FormErrors = {};
 
-  if (
-    typeof fromCoordinate === "string" &&
-    !validateCoordinates(fromCoordinate)
-  ) {
-    errors.fromCoordinate = errors.toCoordinate =
-      "Enter a valid coordinate (e.g. 48.864716,2.349014)";
+  if (!fromCoordinate) {
+    errors.fromCoordinate = "Enter a valid place";
   }
 
-  if (typeof toCoordinate === "string" && !validateCoordinates(toCoordinate)) {
-    errors.toCoordinate = "Enter a valid coordinate (e.g. 51.509865,-0.118092)";
+  if (!toCoordinate) {
+    errors.toCoordinate = "Enter a valid place";
   }
 
   if (typeof date === "string") {
@@ -64,12 +62,20 @@ const validateSearchForm = ({
 };
 
 const SearchForm = () => {
-  const [fromCoordinate, setFromCoordinate] = useState("");
-  const [toCoordinate, setToCoordinate] = useState("");
+  const [fromCoordinate, setFromCoordinate] = useState<LatLng | null>(null);
+  const [toCoordinate, setToCoordinate] = useState<LatLng | null>(null);
   const [startDate, setStartDate] = useState<Date | null>(new Date());
 
   const [isPending, setIsPending] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
+
+  const handleFromCoordinates = (coords: LatLng) => {
+    setFromCoordinate(coords);
+  };
+
+  const handleToCoordinates = (coords: LatLng) => {
+    setToCoordinate(coords);
+  };
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -92,7 +98,7 @@ const SearchForm = () => {
       return;
     }
 
-    window.location.href = `/search?fc=${fromCoordinate}&tc=${toCoordinate}&db=${date}`;
+    window.location.href = `/search?fc=${fromCoordinate?.lat},${fromCoordinate?.lng}&tc=${toCoordinate?.lat},${toCoordinate?.lng}&db=${date}`;
   };
 
   return (
@@ -103,13 +109,9 @@ const SearchForm = () => {
     >
       <label>
         From coordinate
-        <input
-          type="text"
-          name="fromCoordinate"
-          placeholder="Format: latitude,longitude"
-          value={fromCoordinate}
-          onChange={(event) => setFromCoordinate(event.target.value)}
-          required
+        <PlacesAutocomplete
+          onCoordinates={handleFromCoordinates}
+          placeholder="Enter a departure place"
         />
         {errors.fromCoordinate && (
           <span className="error">{errors.fromCoordinate}</span>
@@ -118,13 +120,9 @@ const SearchForm = () => {
 
       <label>
         To coordinate
-        <input
-          type="text"
-          name="toCoordinate"
-          placeholder="Format: latitude,longitude"
-          value={toCoordinate}
-          onChange={(event) => setToCoordinate(event.target.value)}
-          required
+        <PlacesAutocomplete
+          onCoordinates={handleToCoordinates}
+          placeholder="Enter a destination place"
         />
         {errors.toCoordinate && (
           <span className="error">{errors.toCoordinate}</span>
@@ -136,9 +134,12 @@ const SearchForm = () => {
         <DatePicker
           selected={startDate}
           onChange={(date) => setStartDate(date)}
-          popperContainer={({ children }) =>
-            createPortal(children, document.body)
-          }
+          popperContainer={({ children }) => {
+            if (typeof document !== "undefined") {
+              return createPortal(children, document.body);
+            }
+            return null;
+          }}
           required
         />
         {errors.date && <span className="error">{errors.date}</span>}

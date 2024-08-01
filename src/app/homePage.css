@@ -23,16 +23,6 @@
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
 }
 
-.coordinatesExamples {
-  z-index: 2; /* Ensure the examples are above the overlay */
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  text-align: center;
-  font-size: 14px;
-  color: #ccc;
-}
-
 .searchIcon {
   filter: invert(100%);
 }

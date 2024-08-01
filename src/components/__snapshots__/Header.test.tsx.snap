@@ -14,6 +14,17 @@ exports[`Header matches the snapshot 1`] = `
         Carpool
       </span>
     </a>
+    <img
+      alt="Yoann Moise Logo"
+      data-nimg="1"
+      decoding="async"
+      height="50"
+      loading="lazy"
+      src="/_next/image?url=%2Flogo.png&w=128&q=75"
+      srcset="/_next/image?url=%2Flogo.png&w=64&q=75 1x, /_next/image?url=%2Flogo.png&w=128&q=75 2x"
+      style="color: transparent;"
+      width="50"
+    />
   </header>
 </div>
 `;
