@@ -16,24 +16,25 @@
   color: #333;
 }
 
-.form input {
+.form > label > input, .form .react-datepicker-wrapper {
   display: block;
   width: 90%;
   padding-top: 10px;
+}
+
+.form > label > input, .react-datepicker-wrapper input {
   border: none;
   background-color: transparent;
+}
+
+.react-datepicker-popper {
+  z-index: 999;
 }
 
 .form input:focus {
   border-bottom: 1px solid black;
   border-radius: 0;
   outline: none;
-}
-
-.form input[type="date"]::-webkit-inner-spin-button,
-.form input[type="date"]::-webkit-calendar-picker-indicator {
-  display: none;
-  -webkit-appearance: none;
 }
 
 .error {

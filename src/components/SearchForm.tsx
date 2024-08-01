@@ -1,18 +1,27 @@
 "use client";
 
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
+import DatePicker from "react-datepicker";
 
 import { validateCoordinates } from "@/utils";
 
+import "react-datepicker/dist/react-datepicker.css";
 import "./SearchForm.css";
 
 const todayDate = new Date().toISOString().substring(0, 10);
 
 type FormErrors = {
-  date?: string;
+  date?: string | null;
   fromCoordinate?: string;
   toCoordinate?: string;
+};
+
+type ValidateSearchForm = {
+  fromCoordinate: FormDataEntryValue | null;
+  toCoordinate: FormDataEntryValue | null;
+  date: string | null;
 };
 
 /** Validate the form fields */
@@ -20,11 +29,7 @@ const validateSearchForm = ({
   fromCoordinate,
   toCoordinate,
   date,
-}: {
-  fromCoordinate: FormDataEntryValue | null;
-  toCoordinate: FormDataEntryValue | null;
-  date: FormDataEntryValue | null;
-}): FormErrors => {
+}: ValidateSearchForm): FormErrors => {
   const errors: FormErrors = {};
 
   if (
@@ -61,7 +66,8 @@ const validateSearchForm = ({
 const SearchForm = () => {
   const [fromCoordinate, setFromCoordinate] = useState("");
   const [toCoordinate, setToCoordinate] = useState("");
-  const [date, setDate] = useState(todayDate);
+  const [startDate, setStartDate] = useState<Date | null>(new Date());
+
   const [isPending, setIsPending] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
 
@@ -70,6 +76,8 @@ const SearchForm = () => {
 
     setErrors({});
     setIsPending(true);
+
+    const date = startDate?.toISOString().substring(0, 10) || null;
 
     const validationErrors = validateSearchForm({
       fromCoordinate,
@@ -125,11 +133,12 @@ const SearchForm = () => {
 
       <label>
         Date
-        <input
-          type="date"
-          name="date"
-          value={date}
-          onChange={(event) => setDate(event.target.value)}
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+          popperContainer={({ children }) =>
+            createPortal(children, document.body)
+          }
           required
         />
         {errors.date && <span className="error">{errors.date}</span>}

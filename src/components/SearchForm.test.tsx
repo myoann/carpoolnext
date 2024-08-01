@@ -19,7 +19,7 @@ describe("SearchForm", () => {
     const { container } = render(<SearchForm />);
 
     expect(
-      container.querySelector('input[name="fromCoordinate"]'),
+      container.querySelector('input[name="fromCoordinate"]')
     ).toBeInTheDocument();
   });
 
@@ -27,14 +27,16 @@ describe("SearchForm", () => {
     const { container } = render(<SearchForm />);
 
     expect(
-      container.querySelector('input[name="toCoordinate"]'),
+      container.querySelector('input[name="toCoordinate"]')
     ).toBeInTheDocument();
   });
 
-  it("renders an input for the date", () => {
+  it("renders an input for the date inside the div with the classname react-datepicker__input-container", () => {
     const { container } = render(<SearchForm />);
 
-    expect(container.querySelector('input[type="date"]')).toBeInTheDocument();
+    expect(
+      container.querySelector(".react-datepicker__input-container input")
+    ).toBeInTheDocument();
   });
 
   it("renders a button", () => {
