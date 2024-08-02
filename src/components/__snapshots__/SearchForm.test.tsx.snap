@@ -32,20 +32,9 @@ exports[`SearchForm matches the snapshot 1`] = `
     </label>
     <label>
       Date
-      <div
-        class="react-datepicker-wrapper"
-      >
-        <div
-          class="react-datepicker__input-container"
-        >
-          <input
-            class=""
-            required=""
-            type="text"
-            value="08/01/2024"
-          />
-        </div>
-      </div>
+      <input
+        type="date"
+      />
     </label>
     <button
       class="submitButton"

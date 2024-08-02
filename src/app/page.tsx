@@ -3,7 +3,9 @@ import SearchForm from "@/components/SearchForm";
 
 import "./homePage.css";
 
-const todayDate = new Date().toISOString().substring(0, 10);
+const tomorrowDate = new Date();
+tomorrowDate.setDate(tomorrowDate.getDate() + 1);
+const tomorrowDateFormatted = tomorrowDate.toISOString().substring(0, 10);
 
 const Home = () => {
   return (
@@ -13,10 +15,10 @@ const Home = () => {
       <div className="existingSearch">
         Or try with an existing search:
         <a
-          href={`/search?fc=48.864716,2.349014&tc=51.509865,-0.118092&db=${todayDate}`}
+          href={`/search?fc=48.864716,2.349014&tc=45.750000,4.850000&db=${tomorrowDateFormatted}`}
           className="existingSearchLink"
         >
-          <span>Paris to London today</span>
+          <span>Paris to Lyon tomorrow</span>
 
           <Image
             src="/search.svg"
