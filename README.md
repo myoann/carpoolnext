@@ -38,6 +38,7 @@ To make the project work, ensure you have a .env.local file with the following c
 
 ```env
 BLABLACAR_API_KEY=your_blablacar_api_key
+MAPS_API_KEY=your_google_maps_api_key
 ```
 
 ## Scripts
