@@ -11,6 +11,7 @@ import PlacesAutocomplete from "./PlacesAutocomplete";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "./SearchForm.css";
+import { isMobileDevice } from "@/utils";
 
 const todayDate = new Date().toISOString().substring(0, 10);
 
@@ -105,10 +106,10 @@ const SearchForm = () => {
     <form
       onSubmit={handleFormSubmit}
       aria-label="Search for a carpool"
-      className="form"
+      className="searchForm"
     >
       <label>
-        From coordinate
+        From city
         <PlacesAutocomplete
           onCoordinates={handleFromCoordinates}
           placeholder="Enter a departure place"
@@ -119,7 +120,7 @@ const SearchForm = () => {
       </label>
 
       <label>
-        To coordinate
+        To city
         <PlacesAutocomplete
           onCoordinates={handleToCoordinates}
           placeholder="Enter a destination place"
@@ -134,13 +135,15 @@ const SearchForm = () => {
         <DatePicker
           selected={startDate}
           onChange={(date) => setStartDate(date)}
-          popperContainer={({ children }) => {
+          withPortal
+          /* popperContainer={({ children }) => {
             if (typeof document !== "undefined") {
               return createPortal(children, document.body);
             }
             return null;
-          }}
+          }} */
           required
+          inline={isMobileDevice()}
         />
         {errors.date && <span className="error">{errors.date}</span>}
       </label>

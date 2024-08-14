@@ -14,9 +14,15 @@
 }
 
 .logoTitle {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 900;
   color: #008ec2;
   font-style: italic;
   text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 10px;
+  }
 }

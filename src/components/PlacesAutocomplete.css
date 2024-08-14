@@ -35,3 +35,9 @@
 .placesAutocomplete li small {
   color: #888;
 }
+
+@media (max-width: 768px) {
+  .placesAutocomplete ul {
+    width: 100%;
+  }
+}

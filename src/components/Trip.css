@@ -32,13 +32,13 @@
 }
 
 .cheapest {
-  font-size: 12px;
+  font-size: 0.7rem;
   text-transform: uppercase;
   color: #00b894;
 }
 
 .vehicle {
-  font-size: 12px;
+  font-size: 0.7rem;
   color: #b2bec3;
   text-transform: capitalize;
 }
@@ -55,13 +55,13 @@
 }
 
 .time {
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #2d3436;
 }
 
 .price {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #2d3436;
 }
@@ -83,7 +83,7 @@
 
 .duration {
   color: #a1a9c3;
-  font-size: 14px;
+  font-size: 0.7rem;
 }
 
 .addresses {
@@ -91,7 +91,7 @@
   justify-content: space-between;
   width: 50%;
   color: #425486;
-  font-size: 14px;
+  font-size: 0.7rem;
 }
 
 .addresses > span:last-child,

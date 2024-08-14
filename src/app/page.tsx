@@ -13,7 +13,7 @@ const Home = () => {
       <SearchForm />
 
       <div className="existingSearch">
-        Or try with an existing search:
+        Or try with an existing search
         <a
           href={`/search?fc=48.864716,2.349014&tc=45.750000,4.850000&db=${tomorrowDateFormatted}`}
           className="existingSearchLink"

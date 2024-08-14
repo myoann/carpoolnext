@@ -1,4 +1,4 @@
-.form {
+.searchForm {
   z-index: 3; /* Ensure the form is above the overlay */
   display: flex;
   justify-content: space-between;
@@ -10,34 +10,35 @@
   border-radius: 9999px;
 }
 
-.form label {
+
+.searchForm label {
   width: 100%;
   font-weight: bold;
   color: #333;
 }
 
-.form > label > div:first-child {
-  display: block;
+.searchForm > label > div:first-child {
+  display: block !important; /* important is added here because of a not necessary override by react-datepicker */
   width: 90%;
   padding-top: 10px;
 }
 
-.form input {
+.searchForm input {
   width: 100%;
   border: none;
   background-color: transparent;
+}
+
+.searchForm input:focus {
+  outline: none;
 }
 
 .react-datepicker-popper {
   z-index: 999;
 }
 
-.form input:focus {
-  outline: none;
-}
-
 .error {
-  font-size: 10px;
+  font-size: 0.7rem;
   font-weight: 400;
   color: red;
 }
@@ -66,4 +67,48 @@
 
 .searchIcon {
   filter: invert(100%);
+}
+
+
+@media (max-width: 768px) {
+  .searchForm {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .searchForm label {
+    background-color: #f0f0f0;
+    font-size: 1.5rem;
+    border-radius: 16px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    max-width: 100%;
+    font-size: 2rem;
+  }
+  
+
+  .searchForm > label > div:first-child {
+    display: block !important; /* important is added here because of a not necessary override by react-datepicker */
+    width: 100%;
+    padding-top: 10px;
+  }
+  
+  .searchForm input {
+    font-size: 1.5rem;
+  }
+
+  .submitButton {
+    font-size: 1.2rem;
+    gap: 20px;
+    border-radius: 16px;
+
+  }
+
+  .submitButton::before {
+    content: "Search"
+  }
 }
