@@ -22,5 +22,8 @@ export const currencySymbol = (currency: string) => {
 
 /** Utility function to check if the device has a max-width of 768px and if the orientation is portrait */
 export const isMobileDevice = (): boolean => {
-  return window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+  return typeof window !== "undefined"
+    ? window.matchMedia("(max-width: 768px) and (orientation: portrait)")
+        .matches
+    : false;
 };

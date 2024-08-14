@@ -99,7 +99,9 @@ const SearchForm = () => {
       return;
     }
 
-    window.location.href = `/search?fc=${fromCoordinate?.lat},${fromCoordinate?.lng}&tc=${toCoordinate?.lat},${toCoordinate?.lng}&db=${date}`;
+    if (typeof window !== "undefined") {
+      window.location.href = `/search?fc=${fromCoordinate?.lat},${fromCoordinate?.lng}&tc=${toCoordinate?.lat},${toCoordinate?.lng}&db=${date}`;
+    }
   };
 
   return (

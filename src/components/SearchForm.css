@@ -10,7 +10,6 @@
   border-radius: 9999px;
 }
 
-
 .searchForm label {
   width: 100%;
   font-weight: bold;
@@ -69,7 +68,6 @@
   filter: invert(100%);
 }
 
-
 @media (max-width: 768px) {
   .searchForm {
     width: 100%;
@@ -89,14 +87,13 @@
     max-width: 100%;
     font-size: 2rem;
   }
-  
 
   .searchForm > label > div:first-child {
     display: block !important; /* important is added here because of a not necessary override by react-datepicker */
     width: 100%;
     padding-top: 10px;
   }
-  
+
   .searchForm input {
     font-size: 1.5rem;
   }
@@ -105,10 +102,9 @@
     font-size: 1.2rem;
     gap: 20px;
     border-radius: 16px;
-
   }
 
   .submitButton::before {
-    content: "Search"
+    content: "Search";
   }
 }

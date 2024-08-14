@@ -1,5 +1,9 @@
 import { convertSeconds, currencySymbol, isMobileDevice } from "./";
 
+// Mock the window.matchMedia function
+const matchMedia = jest.fn();
+window.matchMedia = matchMedia;
+
 describe("utils", () => {
   describe("convertSeconds", () => {
     it("converts seconds to HHhMM format", () => {
@@ -21,22 +25,26 @@ describe("utils", () => {
     });
   });
 
-
   describe("isMobileDevice", () => {
     it("returns true if the device has a max-width of 768px", () => {
       const matchMedia = jest.fn().mockReturnValue({ matches: true });
       window.matchMedia = matchMedia;
 
       expect(isMobileDevice()).toBe(true);
-      expect(matchMedia).toHaveBeenCalledWith("(max-width: 768px)");
+      expect(matchMedia).toHaveBeenCalledWith(
+        "(max-width: 768px) and (orientation: portrait)",
+      );
     });
 
     it("returns false if the device has a min-width of 769px", () => {
       const matchMedia = jest.fn().mockReturnValue({ matches: false });
+
       window.matchMedia = matchMedia;
 
       expect(isMobileDevice()).toBe(false);
-      expect(matchMedia).toHaveBeenCalledWith("(max-width: 768px)");
+      expect(matchMedia).toHaveBeenCalledWith(
+        "(max-width: 768px) and (orientation: portrait)",
+      );
     });
   });
 });

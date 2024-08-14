@@ -4,10 +4,10 @@ exports[`SearchForm matches the snapshot 1`] = `
 <div>
   <form
     aria-label="Search for a carpool"
-    class="form"
+    class="searchForm"
   >
     <label>
-      From coordinate
+      From city
       <div
         class="placesAutocomplete"
       >
@@ -19,7 +19,7 @@ exports[`SearchForm matches the snapshot 1`] = `
       </div>
     </label>
     <label>
-      To coordinate
+      To city
       <div
         class="placesAutocomplete"
       >

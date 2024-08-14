@@ -8,6 +8,10 @@ jest.mock("react-datepicker", () => {
   return DatePicker;
 });
 
+jest.mock("../utils", () => ({
+  isMobileDevice: () => false,
+}));
+
 describe("SearchForm", () => {
   it("matches the snapshot", () => {
     const { container } = render(<SearchForm />);
@@ -30,12 +34,10 @@ describe("SearchForm", () => {
     expect(placesAutocompleteInputs).toHaveLength(2);
   });
 
-  it("renders an input for the date inside the div with the classname react-datepicker__input-container", () => {
+  it("renders an input for the date", () => {
     const { container } = render(<SearchForm />);
 
-    expect(
-      container.querySelector(".react-datepicker__input-container input"),
-    ).toBeInTheDocument();
+    expect(container.querySelector("input[type='date']")).toBeInTheDocument();
   });
 
   it("renders a button", () => {
