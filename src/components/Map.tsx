@@ -26,7 +26,7 @@ type DepartureAndArrivalProps = {
 const polylineOptions = { fillColor: "#00aff5" };
 const circleOptions = { color: "#00aff5" };
 
-export default function Map({
+export default function ReactLeafletMap({
   geoDeparture,
   geoArrival,
 }: DepartureAndArrivalProps) {
@@ -77,7 +77,7 @@ const FitBounds = ({ geoDeparture, geoArrival }: DepartureAndArrivalProps) => {
   useEffect(() => {
     const bounds = new LatLngBounds(
       [geoDeparture.lat, geoDeparture.lng],
-      [geoArrival.lat, geoArrival.lng],
+      [geoArrival.lat, geoArrival.lng]
     );
     map.fitBounds(bounds);
   }, [geoDeparture, geoArrival, map]);

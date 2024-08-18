@@ -7,7 +7,7 @@
   top: 100%;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 5;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -15,7 +15,6 @@
   border: 1px solid #ccc;
   border-top: 0;
   border-radius: 0 0 4px 4px;
-  z-index: 5;
 }
 
 .placesAutocomplete li {
