@@ -1,6 +1,6 @@
-# BlablaNext
+# CarpoolNext
 
-BlablaNext is a carpooling search application built with Next.js. It allows users to enter coordinates and search for carpooling options. The search results can be sorted by departure, price, or the fastest option, and are displayed on a map.
+CarpoolNext is a carpooling search application built with Next.js. It allows users to enter coordinates and search for carpooling options. The search results can be sorted by departure, price, or the fastest option, and are displayed on a map.
 
 ## Getting Started
 
