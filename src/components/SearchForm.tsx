@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { createPortal } from "react-dom";
 import Image from "next/image";
 import DatePicker from "react-datepicker";
 
@@ -11,7 +10,6 @@ import PlacesAutocomplete from "./PlacesAutocomplete";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "./SearchForm.css";
-import { isMobileDevice } from "@/utils";
 
 const todayDate = new Date().toISOString().substring(0, 10);
 
@@ -110,9 +108,10 @@ const SearchForm = () => {
       aria-label="Search for a carpool"
       className="searchForm"
     >
-      <label>
+      <label htmlFor="fromCityInput">
         From city
         <PlacesAutocomplete
+          id="fromCityInput"
           onCoordinates={handleFromCoordinates}
           placeholder="Enter a departure place"
         />
@@ -121,9 +120,10 @@ const SearchForm = () => {
         )}
       </label>
 
-      <label>
+      <label htmlFor="toCityInput">
         To city
         <PlacesAutocomplete
+          id="toCityInput"
           onCoordinates={handleToCoordinates}
           placeholder="Enter a destination place"
         />
@@ -132,20 +132,14 @@ const SearchForm = () => {
         )}
       </label>
 
-      <label>
+      <label htmlFor="dateInput">
         Date
         <DatePicker
+          id="dateInput"
           selected={startDate}
           onChange={(date) => setStartDate(date)}
           withPortal
-          /* popperContainer={({ children }) => {
-            if (typeof document !== "undefined") {
-              return createPortal(children, document.body);
-            }
-            return null;
-          }} */
           required
-          inline={isMobileDevice()}
         />
         {errors.date && <span className="error">{errors.date}</span>}
       </label>

@@ -9,11 +9,12 @@ import { LatLng } from "@/types";
 import "./PlacesAutocomplete.css";
 
 type Props = {
+  id: string;
   onCoordinates: (coords: LatLng) => void;
   placeholder: string;
 };
 
-const PlacesAutocomplete = ({ onCoordinates, placeholder }: Props) => {
+const PlacesAutocomplete = ({ id, onCoordinates, placeholder }: Props) => {
   const {
     ready,
     value,
@@ -66,6 +67,7 @@ const PlacesAutocomplete = ({ onCoordinates, placeholder }: Props) => {
   return (
     <div className="placesAutocomplete">
       <input
+        id={id}
         value={value}
         onChange={handleInput}
         disabled={!ready}

@@ -6,6 +6,7 @@ exports[`PlacesAutocomplete matches the snapshot 1`] = `
     class="placesAutocomplete"
   >
     <input
+      id="placesAutocomplete"
       placeholder="Search for a place"
       value=""
     />

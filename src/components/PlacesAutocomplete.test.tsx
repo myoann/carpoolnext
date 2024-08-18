@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 import PlacesAutocomplete from "./PlacesAutocomplete";
 
 const defaultProps = {
+  id: "placesAutocomplete",
   placeholder: "Search for a place",
   onCoordinates: jest.fn(),
 };

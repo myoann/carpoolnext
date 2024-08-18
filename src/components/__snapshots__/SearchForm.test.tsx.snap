@@ -6,31 +6,39 @@ exports[`SearchForm matches the snapshot 1`] = `
     aria-label="Search for a carpool"
     class="searchForm"
   >
-    <label>
+    <label
+      for="fromCityInput"
+    >
       From city
       <div
         class="placesAutocomplete"
       >
         <input
+          id="fromCityInput"
           placeholder="Enter a departure place"
           value=""
         />
         <ul />
       </div>
     </label>
-    <label>
+    <label
+      for="toCityInput"
+    >
       To city
       <div
         class="placesAutocomplete"
       >
         <input
+          id="toCityInput"
           placeholder="Enter a destination place"
           value=""
         />
         <ul />
       </div>
     </label>
-    <label>
+    <label
+      for="dateInput"
+    >
       Date
       <input
         type="date"
