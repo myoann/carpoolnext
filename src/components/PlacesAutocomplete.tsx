@@ -58,8 +58,10 @@ const PlacesAutocomplete = ({ id, onCoordinates, placeholder }: Props) => {
       const country = terms[terms.length - 1].value;
 
       return (
-        <li key={place_id} onClick={handleSelect(suggestion)}>
-          {main_text}, {country}
+        <li key={place_id}>
+          <button onClick={handleSelect(suggestion)}>
+            {main_text}, {country}
+          </button>
         </li>
       );
     });

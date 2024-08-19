@@ -3,6 +3,7 @@ import { ParsedTrip } from "@/types";
 import { convertSeconds, currencySymbol } from "@/utils";
 
 import "./Trip.css";
+import { useMemo } from "react";
 
 type Props = {
   trip: ParsedTrip;
@@ -14,6 +15,14 @@ const Trip = ({
   const firstWaypoint = waypoints[0];
   const lastWaypoint = waypoints[waypoints.length - 1];
   const nbTransfers = waypoints.length - 2;
+
+  const transferText = useMemo(() => {
+    if (nbTransfers === 0) {
+      return "Direct";
+    }
+
+    return `${nbTransfers} ${nbTransfers > 1 ? "Stops" : "Stop"}`;
+  }, [nbTransfers]);
 
   return (
     <li key={link} className="trip">
@@ -65,11 +74,7 @@ const Trip = ({
           </span>
         </div>
 
-        <span className="transfers">
-          {nbTransfers === 0
-            ? "Direct"
-            : `${nbTransfers} ${nbTransfers > 1 ? "Stops" : "Stop"}`}
-        </span>
+        <span className="transfers">{transferText}</span>
       </a>
     </li>
   );

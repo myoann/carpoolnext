@@ -77,7 +77,7 @@ const FitBounds = ({ geoDeparture, geoArrival }: DepartureAndArrivalProps) => {
   useEffect(() => {
     const bounds = new LatLngBounds(
       [geoDeparture.lat, geoDeparture.lng],
-      [geoArrival.lat, geoArrival.lng]
+      [geoArrival.lat, geoArrival.lng],
     );
     map.fitBounds(bounds);
   }, [geoDeparture, geoArrival, map]);
