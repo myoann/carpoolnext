@@ -19,7 +19,14 @@ describe("Header", () => {
   it("has a text with the name of the website (CARPOOL)", () => {
     render(<Header />);
 
-    const logoTitle = screen.getByText("Carpool");
-    expect(logoTitle).toBeInTheDocument();
+    const link = screen.getByRole("link");
+    expect(link).toHaveTextContent("Carpool");
+  });
+
+  it("has an image with the alt text 'Yoann Moise Logo'", () => {
+    render(<Header />);
+
+    const image = screen.getByRole("img", { name: "Yoann Moise Logo" });
+    expect(image).toBeInTheDocument();
   });
 });

@@ -18,7 +18,8 @@ describe("PlacesAutocomplete", () => {
   it("has an input with the placeholder passed as prop", () => {
     render(<PlacesAutocomplete {...defaultProps} />);
 
-    const input = screen.getByPlaceholderText("Search for a place");
+    const input = screen.getByRole("textbox");
     expect(input).toBeInTheDocument();
+    expect(input).toHaveAttribute("placeholder", "Search for a place");
   });
 });

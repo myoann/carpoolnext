@@ -46,6 +46,18 @@ describe("Trip", () => {
     expect(container).toMatchSnapshot();
   });
 
+  it("has a list element containing a link", () => {
+    render(<Trip {...defaultProps} />);
+
+    const li = screen.getByRole("listitem");
+    expect(li).toBeInTheDocument();
+
+    const link = screen.getByRole("link");
+    expect(link).toBeInTheDocument();
+
+    expect(li).toContainElement(link);
+  });
+
   it("has a link which redirects to the trip link", () => {
     render(<Trip {...defaultProps} />);
 
@@ -58,7 +70,7 @@ describe("Trip", () => {
       <Trip
         {...defaultProps}
         trip={{ ...defaultProps.trip, isCheapest: true }}
-      />,
+      />
     );
 
     const cheapest = screen.getByText("Cheapest");
@@ -80,7 +92,7 @@ describe("Trip", () => {
           ...defaultProps.trip,
           vehicle: { make: "Renault", model: "Clio" },
         }}
-      />,
+      />
     );
 
     const vehicle = screen.getByText("Renault Clio");
