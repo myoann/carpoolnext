@@ -11,8 +11,8 @@ import "./searchPage.css";
 type Props = {
   searchParams?: {
     fc: string; // Format: "latitude,longitude" url encoded
-    tc: string; // Format: "latitude,longitude" url encoded.
-    db: string; // Format: "YYYY-MM-DD"
+    tc: string; // Format: "latitude,longitude" url encoded
+    db: string; // Format: "YYYY-MM-DD" url encoded
   };
 };
 
@@ -34,7 +34,7 @@ const Search = async ({ searchParams }: Props) => {
   const displayedDate = formatDate(rawDate);
 
   const minPrice = Math.min(
-    ...trips.map((trip) => parseFloat(trip.price.amount)),
+    ...trips.map((trip) => parseFloat(trip.price.amount))
   );
 
   let fromName = "";
