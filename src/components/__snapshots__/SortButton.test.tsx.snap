@@ -7,7 +7,6 @@ exports[`SortButton matches the snapshot 1`] = `
   >
     Departure
      
-    ↑
   </button>
 </div>
 `;

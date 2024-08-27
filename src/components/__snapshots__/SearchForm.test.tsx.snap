@@ -4,6 +4,7 @@ exports[`SearchForm matches the snapshot 1`] = `
 <div>
   <form
     aria-label="Search for a carpool"
+    autocomplete="off"
     class="searchForm"
   >
     <label
@@ -49,7 +50,7 @@ exports[`SearchForm matches the snapshot 1`] = `
             id="dateInput"
             required=""
             type="text"
-            value="08/25/2024"
+            value="08/27/2024"
           />
         </div>
       </div>

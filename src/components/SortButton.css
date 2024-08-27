@@ -1,13 +1,13 @@
 .sortButton {
   border: none;
-  font-size: 1.2rem;
-  color: #00aff5;
+  font-size: var(--font-size-medium);
+  color: var(--color-primary);
   background-color: transparent;
   cursor: pointer;
 }
 
 .sortButton:hover {
-  color: #008ec2;
+  color: var(--color-primary-hover);
 }
 
 .sortButtonSelected {
@@ -15,5 +15,5 @@
 }
 
 .sortButtonSelected:hover {
-  color: #008ec2;
+  color: var(--color-primary-hover);
 }

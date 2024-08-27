@@ -1,5 +1,5 @@
 .trip {
-  background-color: #fff;
+  background-color: var(--color-white);
   border-radius: 16px;
   border: 2px solid #9da1a3;
   transition:
@@ -8,7 +8,7 @@
 }
 
 .trip:hover {
-  border-color: #00aff5;
+  border-color: var(--color-primary);
   background-color: #e2f8ff;
 }
 
@@ -19,7 +19,7 @@
 
 .trip:hover .time,
 .trip:hover .addresses {
-  color: #00aff5;
+  color: var(--color-primary);
 }
 
 .tripLink {
@@ -32,13 +32,13 @@
 }
 
 .cheapest {
-  font-size: 0.7rem;
+  font-size: var(--font-size-small);
   text-transform: uppercase;
   color: #00b894;
 }
 
 .vehicle {
-  font-size: 0.7rem;
+  font-size: var(--font-size-small);
   color: #b2bec3;
   text-transform: capitalize;
 }
@@ -54,16 +54,17 @@
   width: 50%;
 }
 
-.time {
-  font-size: 1.2rem;
+.time, .price {
   font-weight: 700;
   color: #2d3436;
 }
 
+.time {
+  font-size: var(--font-size-medium);
+}
+
 .price {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #2d3436;
+  font-size: var(--font-size-large);
 }
 
 .durationContainer {
@@ -83,7 +84,7 @@
 
 .duration {
   color: #a1a9c3;
-  font-size: 0.7rem;
+  font-size: var(--font-size-small);
 }
 
 .addresses {
@@ -91,7 +92,7 @@
   justify-content: space-between;
   width: 50%;
   color: #425486;
-  font-size: 0.7rem;
+  font-size: var(--font-size-small);
 }
 
 .addresses > span:last-child,
@@ -103,6 +104,6 @@
   width: fit-content;
   padding: 3px 12px;
   border-radius: 50px;
-  background-color: rgb(205, 226, 245);
-  color: rgb(19, 41, 104);
+  background-color: #cde2f5;
+  color: #132968;
 }

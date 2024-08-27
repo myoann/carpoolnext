@@ -31,11 +31,13 @@ describe("SortButton", () => {
     render(<SortButton {...defaultProps} />);
 
     const button = screen.getByRole("button");
-    expect(button).toHaveTextContent("Departure ↑");
+    expect(button).toHaveTextContent("Departure");
   });
 
   it("displays the filter name in descending order", () => {
-    render(<SortButton {...defaultProps} direction={Direction.Desc} />);
+    render(
+      <SortButton {...defaultProps} direction={Direction.Desc} isActive />
+    );
 
     const button = screen.getByRole("button");
     expect(button).toHaveTextContent("Departure ↓");
@@ -45,13 +47,13 @@ describe("SortButton", () => {
     render(<SortButton {...defaultProps} type={SortType.Price} />);
 
     const button = screen.getByRole("button");
-    expect(button).toHaveTextContent("Price ↑");
+    expect(button).toHaveTextContent("Price");
   });
 
   it("displays the filter name for fastest", () => {
     render(<SortButton {...defaultProps} type={SortType.Fastest} />);
 
     const button = screen.getByRole("button");
-    expect(button).toHaveTextContent("Fastest ↑");
+    expect(button).toHaveTextContent("Fastest");
   });
 });

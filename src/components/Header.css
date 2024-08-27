@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 30px 128px;
-  border-bottom: 2px solid #aaaaaa;
+  border-bottom: 2px solid var(--color-gray-light);
 }
 
 .header a {
@@ -16,7 +16,7 @@
 .logoTitle {
   font-size: 2.5rem;
   font-weight: 900;
-  color: #008ec2;
+  color: var(--color-primary);
   font-style: italic;
   text-transform: uppercase;
 }

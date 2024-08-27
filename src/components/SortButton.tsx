@@ -25,7 +25,8 @@ const SortButton = ({ direction, isActive, onClick, type }: Props) => (
     onClick={() => onClick(type)}
     className={`sortButton ${isActive && "sortButtonSelected"}`}
   >
-    {displayedFilterName(type)} {direction === Direction.Asc ? "↑" : "↓"}
+    {displayedFilterName(type)}{" "}
+    {isActive ? (direction === Direction.Asc ? "↑" : "↓") : ""}
   </button>
 );
 

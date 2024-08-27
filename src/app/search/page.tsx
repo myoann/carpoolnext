@@ -27,7 +27,7 @@ const Search = async ({ searchParams }: Props) => {
   let trips: RawTrip[] = [];
   try {
     const response = await fetch(
-      `https://public-api.blablacar.com/api/v3/trips?key=${process.env.BLABLACAR_API_KEY}&from_coordinate=${rawFromCoordinate}&to_coordinate=${rawToCoordinate}&locale=fr-FR&currency=EUR&start_date_local=${rawDate}T00:00:00&count=3`,
+      `https://public-api.blablacar.com/api/v3/trips?key=${process.env.BLABLACAR_API_KEY}&from_coordinate=${rawFromCoordinate}&to_coordinate=${rawToCoordinate}&locale=fr-FR&currency=EUR&start_date_local=${rawDate}T00:00:00&count=7`
     );
 
     const data = await response.json();
@@ -35,9 +35,6 @@ const Search = async ({ searchParams }: Props) => {
   } catch (error) {
     console.error("Error while fetching trips", error);
   }
-
-  // Fallback to fake data for the demo
-  trips = trips || fakeJsonData.trips;
 
   const parsedFromCoordinate = {
     lat: parseFloat(rawFromCoordinate.split(",")[0]),
@@ -56,7 +53,7 @@ const Search = async ({ searchParams }: Props) => {
 
   // Find the minimum price among the trips
   const minPrice = Math.min(
-    ...trips.map((trip) => parseFloat(trip.price.amount)),
+    ...trips.map((trip) => parseFloat(trip.price.amount))
   );
 
   let fromName = "";

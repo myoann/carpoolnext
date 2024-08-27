@@ -107,6 +107,7 @@ const SearchForm = () => {
       onSubmit={handleFormSubmit}
       aria-label="Search for a carpool"
       className="searchForm"
+      autoComplete="off"
     >
       <label htmlFor="fromCityInput">
         From city
