@@ -70,7 +70,7 @@ describe("Trip", () => {
       <Trip
         {...defaultProps}
         trip={{ ...defaultProps.trip, isCheapest: true }}
-      />
+      />,
     );
 
     const cheapest = screen.getByText("Cheapest");
@@ -92,7 +92,7 @@ describe("Trip", () => {
           ...defaultProps.trip,
           vehicle: { make: "Renault", model: "Clio" },
         }}
-      />
+      />,
     );
 
     const vehicle = screen.getByText("Renault Clio");

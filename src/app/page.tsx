@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import SearchForm from "@/components/SearchForm";
 
 import "./homePage.css";

@@ -54,7 +54,8 @@
   width: 50%;
 }
 
-.time, .price {
+.time,
+.price {
   font-weight: 700;
   color: #2d3436;
 }

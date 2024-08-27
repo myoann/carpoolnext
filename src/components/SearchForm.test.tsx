@@ -18,7 +18,7 @@ describe("SearchForm", () => {
     render(<SearchForm />);
 
     expect(
-      screen.getByRole("form", { name: "Search for a carpool" })
+      screen.getByRole("form", { name: "Search for a carpool" }),
     ).toBeInTheDocument();
   });
 

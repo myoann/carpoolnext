@@ -19,3 +19,19 @@ export const currencySymbol = (currency: string) => {
       return currency;
   }
 };
+
+/** Format a date string into a human readable format */
+export const formatDate = (date: string) => {
+  const formattedDate = new Date(date);
+
+  return formattedDate.toLocaleString("default", {
+    month: "long",
+    day: "numeric",
+  });
+};
+
+/** Parse a coordinate string into an object with lat and lng */
+export const parseCoordinate = (coordinate: string) => {
+  const [lat, lng] = coordinate.split(",").map(parseFloat);
+  return { lat, lng };
+};

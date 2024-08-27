@@ -1,9 +1,9 @@
-import { ParsedTrip } from "@/types";
+import { useMemo } from "react";
 
+import { ParsedTrip } from "@/types";
 import { convertSeconds, currencySymbol } from "@/utils";
 
 import "./Trip.css";
-import { useMemo } from "react";
 
 type Props = {
   trip: ParsedTrip;

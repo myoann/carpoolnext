@@ -36,7 +36,7 @@ describe("SortButton", () => {
 
   it("displays the filter name in descending order", () => {
     render(
-      <SortButton {...defaultProps} direction={Direction.Desc} isActive />
+      <SortButton {...defaultProps} direction={Direction.Desc} isActive />,
     );
 
     const button = screen.getByRole("button");

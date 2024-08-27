@@ -1,4 +1,9 @@
-import { convertSeconds, currencySymbol } from "./";
+import {
+  convertSeconds,
+  currencySymbol,
+  formatDate,
+  parseCoordinate,
+} from "./";
 
 describe("utils", () => {
   describe("convertSeconds", () => {
@@ -18,6 +23,26 @@ describe("utils", () => {
       expect(currencySymbol("GBP")).toBe("£");
       expect(currencySymbol("USD")).toBe("$");
       expect(currencySymbol("JPY")).toBe("JPY");
+    });
+  });
+
+  describe("formatDate", () => {
+    it("formats a date string into a human readable format", () => {
+      expect(formatDate("2021-01-01")).toBe("January 1");
+      expect(formatDate("2021-01-02")).toBe("January 2");
+    });
+  });
+
+  describe("parseCoordinate", () => {
+    it("parses a coordinate string into an object with lat and lng", () => {
+      expect(parseCoordinate("48.8566,2.3522")).toEqual({
+        lat: 48.8566,
+        lng: 2.3522,
+      });
+      expect(parseCoordinate("51.5074, 0.1278")).toEqual({
+        lat: 51.5074,
+        lng: 0.1278,
+      });
     });
   });
 });
