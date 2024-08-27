@@ -20,14 +20,20 @@ const displayedFilterName = (type: SortType) => {
   }
 };
 
-const SortButton = ({ direction, isActive, onClick, type }: Props) => (
-  <button
-    onClick={() => onClick(type)}
-    className={`sortButton ${isActive && "sortButtonSelected"}`}
-  >
-    {displayedFilterName(type)}{" "}
-    {isActive ? (direction === Direction.Asc ? "↑" : "↓") : ""}
-  </button>
-);
+const SortButton = ({ direction, isActive, onClick, type }: Props) => {
+  let sortIndicator = "";
+  if (isActive) {
+    sortIndicator = direction === Direction.Asc ? "↑" : "↓";
+  }
+
+  return (
+    <button
+      onClick={() => onClick(type)}
+      className={`sortButton ${isActive && "sortButtonSelected"}`}
+    >
+      {displayedFilterName(type)} {sortIndicator}
+    </button>
+  );
+};
 
 export default SortButton;
