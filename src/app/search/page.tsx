@@ -9,14 +9,15 @@ import SearchResults from "@/components/SearchResults";
 import "./searchPage.css";
 
 type Props = {
-  searchParams?: {
+  searchParams?: Promise<{
     fc: string; // Format: "latitude,longitude" url encoded
     tc: string; // Format: "latitude,longitude" url encoded
     db: string; // Format: "YYYY-MM-DD" url encoded
-  };
+  }>;
 };
 
-const Search = async ({ searchParams }: Props) => {
+const Search = async (props: Props) => {
+  const searchParams = await props.searchParams;
   if (!searchParams || Object.keys(searchParams).length === 0) {
     redirect("/");
   }
