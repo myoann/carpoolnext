@@ -41,19 +41,10 @@ exports[`SearchForm matches the snapshot 1`] = `
       for="dateInput"
     >
       Date
-      <div>
-        <div
-          class="react-datepicker__input-container"
-        >
-          <input
-            class=""
-            id="dateInput"
-            required=""
-            type="text"
-            value="08/27/2024"
-          />
-        </div>
-      </div>
+      <input
+        type="text"
+        value="01/01/2024"
+      />
     </label>
     <button
       class="submitButton"

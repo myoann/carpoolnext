@@ -7,6 +7,12 @@ jest.mock("../utils", () => ({
   isMobileDevice: () => false,
 }));
 
+jest.mock("react-datepicker", () => {
+  return function DatePicker() {
+    return <input type="text" value="01/01/2024" onChange={jest.fn()} />;
+  };
+});
+
 describe("SearchForm", () => {
   it("matches the snapshot", () => {
     const { container } = render(<SearchForm />);
